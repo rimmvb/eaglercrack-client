@@ -1,6 +1,7 @@
 ModAPI.require("player");
 ModAPI.require("settings");
 let playerFound = false;
+let open = false;
 
 function checkForGame() {
     if (typeof ModAPI.player !== 'undefined') {
@@ -18,15 +19,23 @@ const intervalId = setInterval(() => {
         ModAPI.displayToChat({msg: "§5Press Right Shift to open menu"})
 
         window.addEventListener("keydown", (event) => {
-            if (event.key.toLowerCase() === "f") {
+            if (event.key.toLowerCase() === "f" || open == false) {
+                open = true;
             
-                ModAPI.displayToChat({msg: "§5yap 1"})
+                ModAPI.displayToChat({msg: "§5opened"})
+            } else {
+                open = false;
+                ModAPI.displayToChat({msg: "&5Closed"})
             }
         });
+    
     } else {
         checkForGame();
     }
 }, 1000);
+
+
+
 
 
 
