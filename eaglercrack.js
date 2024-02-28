@@ -15,12 +15,24 @@ checkForGame();
 const intervalId = setInterval(() => {
     if (playerFound) {
         clearInterval(intervalId); // Stop the interval
-        ModAPI.displayToChat({msg: "§5StatsHud is now loading"})
-        initializeHud();
+        ModAPI.displayToChat({msg: "§5Press Right Shift to open menu"})
     } else {
         checkForGame();
     }
 }, 1000);
+
+
+if (playerFound) {
+
+    window.addEventListener("keydown", (event) => {
+        if (event.key.toLowerCase() === "f") {
+        
+            ModAPI.displayToChat({msg: "§5yap 1"})
+        }
+    });
+
+}
+
 
 function initializeHud() {
     setTimeout(async function () {
