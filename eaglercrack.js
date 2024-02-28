@@ -23,9 +23,10 @@ const intervalId = setInterval(() => {
                 open = true;
             
                 ModAPI.displayToChat({msg: "§5opened"})
-            } else {
+            } else if (event.key.toLocaleLowerCase() === "f" && open == true) {
                 open = false;
-                ModAPI.displayToChat({msg: "&5Closed"})
+
+                ModAPI.displayToChat({msg: "§5closed"})
             }
         });
     
