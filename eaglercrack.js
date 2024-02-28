@@ -19,7 +19,7 @@ const intervalId = setInterval(() => {
         ModAPI.displayToChat({msg: "§5Press Right Shift to open menu"})
 
         window.addEventListener("keydown", (event) => {
-            if (event.key.toLowerCase() === "f" || open == false) {
+            if (event.key.toLowerCase() === "f" && open == false) {
                 open = true;
             
                 ModAPI.displayToChat({msg: "§5opened"})
