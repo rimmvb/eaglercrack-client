@@ -44,6 +44,12 @@ const intervalId = setInterval(() => {
     }
 }, 1000);
 
+const guicheck = setInterval(() => {
+    if (open == false || document.getElementById("background") != null) {
+        document.body.removeChild(background);
+    } 
+}, 100)
+
 function loadgui() {
     document.exitPointerLock();
     ModAPI.displayToChat({msg: "§5opened"});
