@@ -1,8 +1,17 @@
 ModAPI.require("player");
 ModAPI.require("settings");
+var client = "eaglercrack";
 let playerFound = false;
 let open = false;
 let background; 
+
+var settings = {
+
+}
+
+var modules = {
+
+}
 
 function checkForGame() {
     if (typeof ModAPI.player !== 'undefined') {
@@ -36,6 +45,7 @@ const intervalId = setInterval(() => {
 }, 1000);
 
 function loadgui() {
+    document.exitPointerLock();
     ModAPI.displayToChat({msg: "§5opened"});
 
     background = document.createElement("div");
